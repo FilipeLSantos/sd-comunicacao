@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package calculadora;
+
+option java_multiple_files = true;
+option java_package = "br.dev.filipesantos.rpc";
+
+message SomaRequest {
+  double num1 = 1;
+  double num2 = 2;
+}
+
+message SomaResponse {
+  double resultado = 1;
+}
+
+service CalculadoraService {
+  rpc Soma(SomaRequest) returns (SomaResponse);
+}
