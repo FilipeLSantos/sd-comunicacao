@@ -8,7 +8,11 @@ public class Cliente {
 
     public static void main(String[] args) throws IOException {
 
-        Socket socket = new Socket ("localhost", 5000);
+        int porta = args.length > 0
+        ? Integer.parseInt(args[0])
+        : 5000;
+
+        Socket socket = new Socket("localhost", porta);
 
 
         BufferedReader entrada = new BufferedReader(

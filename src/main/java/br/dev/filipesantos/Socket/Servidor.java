@@ -7,7 +7,11 @@ public class Servidor {
 
     public static void main(String[] args) throws IOException {
 
-        ServerSocket servidor = new ServerSocket(5000);
+        int porta = args.length > 0
+        ? Integer.parseInt(args[0])
+        : 5000;
+
+        ServerSocket servidor = new ServerSocket(porta);
 
         System.out.println("Servidor aguardando conexão...");
 
