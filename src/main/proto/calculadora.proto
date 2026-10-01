@@ -5,15 +5,18 @@ package calculadora;
 option java_multiple_files = true;
 option java_package = "br.dev.filipesantos.rpc";
 
-message SomaRequest {
+message NumberRequest {
   double num1 = 1;
   double num2 = 2;
 }
 
-message SomaResponse {
+message ResultResponse {
   double resultado = 1;
 }
 
 service CalculadoraService {
-  rpc Soma(SomaRequest) returns (SomaResponse);
+  rpc Soma(NumberRequest) returns (ResultResponse);
+  rpc Subtracao(NumberRequest) returns (ResultResponse);
+  rpc Multiplicacao(NumberRequest) returns (ResultResponse);
+  rpc Divisao(NumberRequest) returns (ResultResponse);
 }
